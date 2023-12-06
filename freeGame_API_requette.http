@@ -16,7 +16,7 @@ GET http://localhost:1337/api/free-games
 
 ###
 # récupère un jeu
-GET http://localhost:1337/api/free-games/2
+GET http://localhost:1337/api/free-games/1
 
 ###
 # modifier un jeux
@@ -33,4 +33,4 @@ Content-Type: application/json
 
 ###
 # supprimer un jeu
-DELETE http://localhost:1337/api/free-games/5
+DELETE http://localhost:1337/api/free-games/3

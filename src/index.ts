@@ -44,10 +44,14 @@ app.get('/api/free-games/:id', async (req,res) => { // pour récupère un avce l
   res.json(await FreeGame.findAll({ where: {id: req.params.id}}))
 })
 
-app.put('/api/free-games/:id', async (req,res) => { // pour récupère un avce l'index
+app.put('/api/free-games/:id', async (req,res) => { // pour modifie un jeux avec l'index
   const {nom, description, image} = req.body.data
   const a = await FreeGame.update({ nom, description, image, }, { where: {id: req.params.id}})
   res.json(a)
+})
+
+app.delete('/api/free-games/:id', async (req,res) => { // supprime l'élément avec l'index 
+  res.json(await FreeGame.destroy({ where: {id: req.params.id}}))
 })
 
 
