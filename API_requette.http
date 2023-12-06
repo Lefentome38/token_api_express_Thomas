@@ -1,21 +1,36 @@
-GET http://localhost:3030/helloo
-###
-
-GET http://localhost:3030/aaa HTTP/1.1
+# créer le jeu
+POST http://localhost:1337/api/free-games
 Content-Type: application/json
 
 {
-    "nom": "toto",
-    "description": "ffsdffdfsdfsfdfsezf",
-    "image": "..."
+    "data": {
+        "nom":"aaa",
+        "description":"fff",
+        "image":"xxx"
+    }
 }
 
 ###
-POST http://localhost:3030/test HTTP/1.1
+# recupère tout les jeux 
+GET http://localhost:1337/api/free-games
+
+###
+# récupère un jeu
+GET http://localhost:1337/api/free-games/2
+
+###
+# modifier un jeux
+PUT http://localhost:1337/api/free-games/1
 Content-Type: application/json
 
 {
-    "nom": "aaa",
-    "description": "fff",
-    "image": "xxx"
+    "data": {
+        "nom":"RLS",
+        "description":"pas mal pour passer le temps",
+        "imag":"..."
+    }
 }
+
+###
+# supprimer un jeu
+DELETE http://localhost:1337/api/free-games/5

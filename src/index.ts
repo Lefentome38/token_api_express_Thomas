@@ -1,10 +1,11 @@
 console.log("hello");
 
-import { DataTypes, Sequelize} from "sequelize"
+import { DataTypes, Sequelize, where} from "sequelize"
 import cors from "cors"
 import bodyParser from "body-parser"
 import express from 'express'
 import "dotenv/config"
+import { freemem } from "os";
 
 const app = express();
 const PORT = process.env.PORT as string;
@@ -17,17 +18,11 @@ const sequelize = new Sequelize({
 })
 
 const FreeGame = sequelize.define("FreeGame", {
-  nom: {
-    type: DataTypes.STRING,
-  },
-  description: {
-    type: DataTypes.STRING
-  },
-  image: {
-    type: DataTypes.STRING
-  },
-}, {
-  timestamps: false
+    nom: {type: DataTypes.STRING,},
+    description: {type: DataTypes.STRING},
+    image: {type: DataTypes.STRING},
+  }, {
+    timestamps: false
 })
 sequelize
 .sync()
@@ -35,19 +30,24 @@ sequelize
   console.error('Erreur de synchronisation', error)
 })
 
-
-
-app.get('/aaa', async (req, res) =>{
-  res.json("la liste de la recette: " + " " + req.body.nom + " " + req.body.image)
+app.post('/api/free-games', async (req,res) => { // pour créer un jeu 
+  const {nom, description, image} = req.body.data
+  const a = await FreeGame.create({ nom, description, image })
+  res.json(a)
 })
 
-app.post('/test', async (req,res) => {
-  const test = await FreeGame.create({
-    nom: req.body.nom,
-    description: req.body.description,
-    image: req.body.image 
-  })
-  res.json(test)
+app.get('/api/free-games', async (req,res) => { // pour récupère tout les jeux
+  res.json(await FreeGame.findAll())
+})
+
+app.get('/api/free-games/:id', async (req,res) => { // pour récupère un avce l'index
+  res.json(await FreeGame.findAll({ where: {id: req.params.id}}))
+})
+
+app.put('/api/free-games/:id', async (req,res) => { // pour récupère un avce l'index
+  const {nom, description, image} = req.body.data
+  const a = await FreeGame.update({ nom, description, image, }, { where: {id: req.params.id}})
+  res.json(a)
 })
 
 
