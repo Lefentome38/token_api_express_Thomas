@@ -1,11 +1,10 @@
 console.log("hello");
 
-import { DataType, DataTypes, Sequelize} from "sequelize"
+import { DataTypes, Sequelize} from "sequelize"
 import cors from "cors"
 import bodyParser from "body-parser"
 import express from 'express'
 import "dotenv/config"
-import { describe } from "node:test";
 
 const app = express();
 const PORT = process.env.PORT as string;
@@ -14,7 +13,7 @@ app.use(bodyParser.json())
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "./BDD.sqlite"
+  storage: "./BDD.sqlite",
 })
 
 const FreeGame = sequelize.define("FreeGame", {
@@ -27,7 +26,6 @@ const FreeGame = sequelize.define("FreeGame", {
   image: {
     type: DataTypes.STRING
   },
-  // "prix"
 }, {
   timestamps: false
 })
@@ -36,6 +34,8 @@ sequelize
 .catch(error => {
   console.error('Erreur de synchronisation', error)
 })
+
+
 
 app.get('/aaa', async (req, res) =>{
   res.json("la liste de la recette: " + " " + req.body.nom + " " + req.body.image)

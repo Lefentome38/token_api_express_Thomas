@@ -5,9 +5,9 @@ GET http://localhost:3030/aaa HTTP/1.1
 Content-Type: application/json
 
 {
-    "nom": "aaa",
-    "description": "fff",
-    "image": "xxx"
+    "nom": "toto",
+    "description": "ffsdffdfsdfsfdfsezf",
+    "image": "..."
 }
 
 ###
