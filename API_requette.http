@@ -1,1 +1,21 @@
-GET http://localhost:3086/helloo
+GET http://localhost:3030/helloo
+###
+
+GET http://localhost:3030/aaa HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom": "aaa",
+    "description": "fff",
+    "image": "xxx"
+}
+
+###
+POST http://localhost:3030/test HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom": "aaa",
+    "description": "fff",
+    "image": "xxx"
+}
