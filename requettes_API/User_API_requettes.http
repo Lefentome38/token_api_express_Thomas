@@ -14,7 +14,7 @@ POST http://localhost:1337/api/auth/local
 Content-Type: application/json
 
 {
-    "identifier": "admin_1@gmail.com",
+    "identifier": "admin_1@mail.com",
     "password": "Admin_1_MOT"
 }
 

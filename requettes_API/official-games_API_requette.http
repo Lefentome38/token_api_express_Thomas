@@ -8,7 +8,7 @@ Content-Type: application/json
         "nom":"yoyo",
         "description":"zzzz",
         "image":"hggg",
-        "prix": "5"
+        "prix": 5
     }
 }
 
