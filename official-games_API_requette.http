@@ -7,8 +7,8 @@ Content-Type: application/json
     "data": {
         "nom":"yoyo",
         "description":"zzzz",
-        "imgae":"....",
-        "prix": 5
+        "image":"hggg",
+        "prix": "5"
     }
 }
 
@@ -32,7 +32,7 @@ Content-Type: application/json
     "data": {
         "nom":"gogo",
         "description":"fsdlfsdpkf",
-        "imgae":"....",
+        "image":"....",
         "prix": 5000
     }
 }

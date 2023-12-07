@@ -3,9 +3,9 @@ POST http://localhost:1337/api/auth/local/register
 content-type: application/json
 
 {
-    "username": "admin_3",
-    "email": "admin_fd3@gfdsfdsmail.com",
-    "password": "Admin_3_MOT"
+    "username": "admin_1",
+    "email": "admin_1@mail.com",
+    "password": "Admin_1_MOT"
 }
 
 ###
@@ -14,8 +14,8 @@ POST http://localhost:1337/api/auth/local
 Content-Type: application/json
 
 {
-    "identifier": "admin_2@gmail.com",
-    "password": "Admin_2_MOT"
+    "identifier": "admin_1@gmail.com",
+    "password": "Admin_1_MOT"
 }
 
 ###

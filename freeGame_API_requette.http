@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "data": {
-        "nom":"aaa",
+        "nom":"pfdhgoidsfhg",
         "description":"fff",
         "image":"xxx"
     }
@@ -20,7 +20,7 @@ GET http://localhost:1337/api/free-games/1
 
 ###
 # modifier un jeux
-PUT http://localhost:1337/api/free-games/1
+PUT http://localhost:1337/api/free-games/3
 Content-Type: application/json
 
 {
