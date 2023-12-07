@@ -1,0 +1,43 @@
+#pour créer un Utilisateur
+POST http://localhost:1337/api/auth/local/register 
+content-type: application/json
+
+{
+    "username": "admin_3",
+    "email": "admin_fd3@gfdsfdsmail.com",
+    "password": "Admin_3_MOT"
+}
+
+###
+#connexion
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+    "identifier": "admin_2@gmail.com",
+    "password": "Admin_2_MOT"
+}
+
+###
+#pour regarder la BDD
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1NDMyLCJleHAiOjE3MDQzNjc0MzJ9._P9JKzb88_ZQA9kvPU9P94mNQWJ0PbbnqJblWMUMrXk
+
+###
+POST http://localhost:1337/api/auth/change-password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzgyMDYwLCJleHAiOjE3MDQzNzQwNjB9.fPreBo9zcv2n-9j9gpEf3yM2UYRdRMhErVOrNy4Cy5o
+Content-Type: application/json
+
+{
+    "currentPassword": "admin_3@gmail.com",
+    "password": "Admin_2_MOT",
+    "passwordConfirmation": "Admin_2_MOT"
+}
+
+###
+
+# - Créer un utilisateur
+# - Se connecter
+# - Se déconnecter
+# - Récupérer les informations de l'utilisateur connecté
+# - Modifier le mot de passe de l'utilisateur connecté

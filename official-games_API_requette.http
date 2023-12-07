@@ -1,0 +1,43 @@
+# créer le jeu
+POST http://localhost:1337/api/official-games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1NDMyLCJleHAiOjE3MDQzNjc0MzJ9._P9JKzb88_ZQA9kvPU9P94mNQWJ0PbbnqJblWMUMrXk
+Content-Type: application/json
+
+{
+    "data": {
+        "nom":"yoyo",
+        "description":"zzzz",
+        "imgae":"....",
+        "prix": 5
+    }
+}
+
+###
+# récupère les jeux
+GET http://localhost:1337/api/official-games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1NDMyLCJleHAiOjE3MDQzNjc0MzJ9._P9JKzb88_ZQA9kvPU9P94mNQWJ0PbbnqJblWMUMrXk
+
+###
+# récupère un jeux
+GET http://localhost:1337/api/official-games/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1NDMyLCJleHAiOjE3MDQzNjc0MzJ9._P9JKzb88_ZQA9kvPU9P94mNQWJ0PbbnqJblWMUMrXk
+
+###
+# modifie un jeu
+PUT http://localhost:1337/api/official-games/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1NDMyLCJleHAiOjE3MDQzNjc0MzJ9._P9JKzb88_ZQA9kvPU9P94mNQWJ0PbbnqJblWMUMrXk
+Content-Type: application/json
+
+{
+    "data": {
+        "nom":"gogo",
+        "description":"fsdlfsdpkf",
+        "imgae":"....",
+        "prix": 5000
+    }
+}
+
+###
+# supprimer un jeu
+DELETE http://localhost:1337/api/official-games/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxNzc1NDMyLCJleHAiOjE3MDQzNjc0MzJ9._P9JKzb88_ZQA9kvPU9P94mNQWJ0PbbnqJblWMUMrXk
