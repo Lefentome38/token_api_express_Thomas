@@ -27,7 +27,6 @@ AuthRouter.post('/local/register', async (req,res) => { // pour créer un jeu et
     }
   })
 
-// const match = await bcrypt.compare(myPlaintextPassword, hash);
   
 AuthRouter.post('/local', async (req,res) => { 
     const {identifier, password} = req.body
@@ -50,3 +49,23 @@ AuthRouter.post('/local', async (req,res) => {
         res.status(400).json({ message: "l'utilisateur n'existe pas" })
     }
 })
+
+AuthRouter.post('/change-password', async (req,res) => { 
+    const {currentPassword, password, passwordConfirmation} = req.body
+
+    const user = await User.findOne({ where: { email: currentPassword }})
+    console.log(user);
+
+    // if(password === passwordConfirmation){
+    //     res.json(await User.update({password: password}))
+    // }
+    // else {
+    //     res.status(400).json({ message: "l'utilisateur n'existe pas" })
+    // }
+})
+
+// {
+//     "currentPassword": "admin_3@gmail.com",
+//     "password": "Admin_2_MOT",
+//     "passwordConfirmation": "Admin_2_MOT"
+// }
